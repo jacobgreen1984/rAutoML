@@ -1,9 +1,6 @@
-# title : stopping_rules
-# author : jacob
-# desc : 
-
-
-# stopping_rules
+#' @title stopping_rules
+#' @description list, stopping_rules object
+#' @export
 stopping_rules <- list(
   stopping_rounds = 3,
   stopping_metric = "logloss",
@@ -12,4 +9,3 @@ stopping_rules <- list(
   ntrees = 10000
 )
 
-cat(">> stopping_rules loaded! \n")
