@@ -22,11 +22,11 @@ library(h2o)
 h2o.init()
 data(churn, package = "rAutoML")
 data_hex <- as.h2o(churn)
-split_hex <- h2o.splitFrame(data = data_hex, ratios = c(0.5,0.25), seed = 1234)
+split_hex <- h2o.splitFrame(data = data_hex, ratios = c(0.5,0.3), seed = 1234)
 train_hex <- split_hex[[1]]
 valid_hex <- split_hex[[2]]
-test_hex  <- split_hex[[3]]
-y <- "Churn."
-x <- setdiff(names(data_hex),  c(y))
-output <- autoGBM()
+test_hex <- split_hex[[3]]
+y = "Churn."
+x = colnames(data_hex)[colnames(data_hex)!=y]
+output <- autoGBM(training_frame=train_hex, validation_frame_valid_hex, x=x, y=y)
 }
