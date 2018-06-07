@@ -51,7 +51,7 @@ autoGBM <- function(training_frame, validation_frame, x, y){
 #' @export
 autoGBM.performance <- function(model_list, test_hex){
   model_report <- data.frame(
-    "model" = models,
+    "model" = list.files('R/gbm'),
     "train" = sapply(model_list, function(x) h2o.performance(x, train=TRUE)@metrics$AUC),
     "valid" = sapply(model_list, function(x) h2o.performance(x, valid=TRUE)@metrics$AUC),
     "test"  = sapply(model_list, function(x) h2o.performance(x, newdata=test_hex)@metrics$AUC)

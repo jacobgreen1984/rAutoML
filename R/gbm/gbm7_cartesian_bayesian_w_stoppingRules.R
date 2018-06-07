@@ -60,7 +60,8 @@ gbm7_cartesian_bayesian_w_stoppingRules <- h2o.gbm(
   stopping_tolerance = stopping_rules$stopping_tolerance,
   score_each_iteration = stopping_rules$score_each_iteration,
   ntrees = stopping_rules$ntrees,
-  model_id = "gbm7"
+  model_id = "gbm7",
+  verbose = TRUE
 )
 
 cat(">> gbm7 done! \n")

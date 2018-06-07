@@ -45,7 +45,8 @@ gbm4_random_w_stoppingRules <- h2o.gbm(
   stopping_tolerance = stopping_rules$stopping_tolerance,
   score_each_iteration = stopping_rules$score_each_iteration,
   ntrees = stopping_rules$ntrees,
-  model_id = "gbm4"
+  model_id = "gbm4",
+  verbose = TRUE
 )
 
 cat(">> gbm4 done! \n")

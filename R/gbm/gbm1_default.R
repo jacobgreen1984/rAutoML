@@ -9,7 +9,8 @@ gbm1_default <- h2o.gbm(
   training_frame = train_hex,
   validation_frame = valid_hex,
   seed = 1234,
-  model_id = "gbm1"
+  model_id = "gbm1",
+  verbose = TRUE
 )
 
 cat(">> gbm1 done! \n")
